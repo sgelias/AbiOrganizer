@@ -1,23 +1,19 @@
+#!/usr/bin/python3
 import argparse
 import os
 import zipfile
 
 import pandas as pd
-from Bio import SeqIO
 
 
 class AbiOrganizer:
-
-    channels = ['DATA9', 'DATA10', 'DATA11', 'DATA12']
-    extensions = ('.ab1', '.pdf', '.phd.1', '.txt')
 
     def organize_files(self, order_table, order_file):
 
         table = pd.read_excel(order_table)
         table['personInCharge'] = table['personInCharge'].fillna('other')
-
+                
         with zipfile.ZipFile(order_file + '.zip', 'r') as f:
-
             for index, row in table.iterrows():
 
                 dir_path = "%s/%s/%s" % (
@@ -57,14 +53,14 @@ if __name__ == '__main__':
     required = parser.add_argument_group('required arguments')
 
     required.add_argument(
-        '-f --file',
+        '-f',
         help="Inform the name zipped order file. Do not include the ZIP file extension.\n"
             "Ex.: -f '190731FN-022'.",
         required=True
     )
 
     required.add_argument(
-        '-t --table',
+        '-t',
         help="Inform the name of order table. Please include the file extension.\n"
             "Ex.: -t 'order.xlsx'.",
         required=True
@@ -72,4 +68,4 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     AO = AbiOrganizer()
-    AO.organize_files(args.table, args.file)
+    AO.organize_files(args.t, args.f)

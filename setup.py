@@ -14,7 +14,6 @@ except ImportError:
 
 
 REQUIRES = [
-    "biopython",
     "pandas",
 ]
 
