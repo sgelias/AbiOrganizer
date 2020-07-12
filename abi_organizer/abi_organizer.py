@@ -1,8 +1,8 @@
-#!/usr/bin/python3
 import argparse
 import os
-import pandas as pd
 import zipfile
+
+import pandas as pd
 from Bio import SeqIO
 
 
@@ -20,8 +20,14 @@ class AbiOrganizer:
 
             for index, row in table.iterrows():
 
-                dir_path = order_file + '/' + row['personInCharge'] + '/' + row['primerCombination']
-                file = str(row['sampleName']) + '_' + str(row['primerName'])
+                dir_path = "%s/%s/%s" % (
+                    order_file, 
+                    row['personInCharge'], 
+                    row['primerCombination'])
+
+                file = "%s_%s" % (
+                    str(row['sampleName']), 
+                    str(row['primerName']))
 
                 if not os.path.exists(dir_path):
                     os.makedirs(dir_path)
@@ -51,16 +57,16 @@ if __name__ == '__main__':
     required = parser.add_argument_group('required arguments')
 
     required.add_argument(
-        '--file',
+        '-f --file',
         help="Inform the name zipped order file. Do not include the ZIP file extension.\n"
-            "Ex.: --file '190731FN-022'.",
+            "Ex.: -f '190731FN-022'.",
         required=True
     )
 
     required.add_argument(
-        '--table',
+        '-t --table',
         help="Inform the name of order table. Please include the file extension.\n"
-            "Ex.: --table 'order.xlsx'.",
+            "Ex.: -t 'order.xlsx'.",
         required=True
     )
     

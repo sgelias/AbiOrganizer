@@ -4,4 +4,6 @@
 amacrogen.xlsx
 order.xlsx
 primers.xlsx
-
+.history/
+.pypirc
+abi_organizer/data/
