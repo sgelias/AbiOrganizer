@@ -38,6 +38,34 @@ ab1_organizer.py -f ./path/to/zip/file -t ./path/to/order/table.xlsx
 A new folder with the same name of the zip file will be created and all files will be organized by author and genomic marker respectively.
 
 
+```bash
+
+./190731FN-022/
+├── person1
+│   ├── ITS1-F_ITS1-R
+│   │   ├── 01_ITS1-F.ab1
+│   │   ├── 01_ITS1-F.pdf
+│   │   ├── 01_ITS1-F.phd.1
+│   │   ├── 01_ITS1-F.txt
+│   │   ├── 01_ITS1-R.ab1
+│   │   ├── 01_ITS1-R.pdf
+│   │   ├── 01_ITS1-R.phd.1
+│   │   ├── 01_ITS1-R.txt
+├── person2
+│   ├── ITS1-F_ITS1-R
+│   │   ├── 01_ITS1-F.ab1
+│   │   ├── 01_ITS1-F.pdf
+│   │   ├── 01_ITS1-F.phd.1
+│   │   ├── 01_ITS1-F.txt
+│   │   ├── 01_ITS1-R.ab1
+│   │   ├── 01_ITS1-R.pdf
+│   │   ├── 01_ITS1-R.phd.1
+│   │   ├── 01_ITS1-R.txt
+...
+
+```
+
+
 ---
 
 Feel free to add new features and contribute through pull requests. Be happy!!
