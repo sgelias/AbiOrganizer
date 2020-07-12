@@ -7,3 +7,6 @@ primers.xlsx
 .history/
 .pypirc
 abi_organizer/data/
+build/
+dist/
+ab1_organizer.egg-info/
